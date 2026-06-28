@@ -1,0 +1,2 @@
+# solchi
+record shop manager
