@@ -1,0 +1,24 @@
+<h1>Nuovo artista</h1>
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <div>
+    <label for="name">Nome</label>
+    <input id="name" type="text" formControlName="name" />
+    @if (form.controls.name.invalid && form.controls.name.touched) {
+      <span class="error">Il nome è obbligatorio.</span>
+    }
+  </div>
+
+  <div>
+    <label for="nationality">Nazionalità</label>
+    <input id="nationality" type="text" formControlName="nationality" />
+  </div>
+
+  <div>
+    <label for="biography">Biografia</label>
+    <textarea id="biography" formControlName="biography"></textarea>
+  </div>
+
+  <button type="submit" [disabled]="submitting()">Salva</button>
+  <a routerLink="/artists">Annulla</a>
+</form>
