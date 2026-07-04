@@ -1,0 +1,28 @@
+<h1>Artisti</h1>
+
+<a routerLink="/artists/new">Nuovo artista</a>
+
+@if (loading()) {
+  <p>Caricamento...</p>
+}
+
+@if (error()) {
+  <p class="error">{{ error() }}</p>
+}
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Nazionalità</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (artist of artists(); track artist.id) {
+      <tr>
+        <td>{{ artist.name }}</td>
+        <td>{{ artist.nationality }}</td>
+      </tr>
+    }
+  </tbody>
+</table>
