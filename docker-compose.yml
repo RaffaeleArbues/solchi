@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: solchi-postgres
+    environment:
+      POSTGRES_DB: solchi
+      POSTGRES_USER: solchi
+      POSTGRES_PASSWORD: solchi
+    ports:
+      - "5433:5432"
+    volumes:
+      - solchi-postgres-data:/var/lib/postgresql/data
+
+volumes:
+  solchi-postgres-data:
